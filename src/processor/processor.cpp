@@ -1,10 +1,5 @@
 #include "processor.hpp"
 
-#define THRESHOLD 0.0001
-#define V_MARGIN 20
-#define H_MARGIN 100
-
-
 
 static void PrintOnImage(cv::Mat img, cv::Mat out_mat,
                         int index, double confidence,
@@ -64,7 +59,7 @@ static void ImageFlowProcess(const bool is_camera, const char *filename = "")
 
     std::string title = is_camera ?  "YoloCam InRealTime" : "YoloCam Video Recognition";
     cv::namedWindow(title.c_str(), cv::WINDOW_NORMAL);
-    cv::resizeWindow(title.c_str(), 1920, 1080);
+    cv::resizeWindow(title.c_str(), H_SCREENSIZE, V_SCREENSIZE);
 
     cv::Mat frame;
     
