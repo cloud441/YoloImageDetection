@@ -4,9 +4,9 @@
 
 cv::dnn::Net LoadNetwork()
 {
-    cv::dnn::Net net = cv::dnn::readNet(WEIGHT_FILE, CONFIG_FILE, "Darknet");
-    net.setPreferableBackend(cv::dnn::DNN_BACKEND_DEFAULT);
-    net.setPreferableTarget(cv::dnn::DNN_TARGET_OPENCL);
+    cv::dnn::Net net = cv::dnn::readNetFromDarknet(CONFIG_FILE, WEIGHT_FILE);
+    net.setPreferableBackend(cv::dnn::DNN_BACKEND_OPENCV);
+    net.setPreferableTarget(cv::dnn::DNN_TARGET_CPU);
 
     return net;
 }
