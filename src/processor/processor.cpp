@@ -11,7 +11,7 @@ static void PrintOnImage(cv::Mat img, cv::Mat out_mat,
     int top = (int)(out_mat.at<float>(index, 1) * img.rows) - height / 2;
 
     std::stringstream stream;
-    stream << '('max_pos.x << ") p: " <<  confidence * 100;
+    stream << '(' << max_pos.x << ") p: " <<  confidence * 100;
     cv::putText(img, stream.str(), cv::Point(left, top), 1, 2,
                 cv::Scalar(max_pos.x * 10, 255, 255), 2, false);
 
